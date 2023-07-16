@@ -23,12 +23,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("saveUserDetails")
+    @PostMapping()
     public UserMetaData saveUserDetails(@RequestBody UserMetaData userMetaData) {
         return userService.saveUserMetaData(userMetaData);
     }
 
-    @GetMapping("getUserDetails/{uniqueId}")
+    @GetMapping("/{uniqueId}")
     public UserMetaData getUserDetails(@PathVariable String uniqueId){
         return userService.getUserMetaData(uniqueId);
     }
